@@ -17,17 +17,17 @@ public class Ejercicio32 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int importe;
+        int importe; // variable que contendrá lo que el usuario inserta
         int cartera;
         
-        Scanner entrada = new Scanner (System.in);
+        Scanner entrada = new Scanner (System.in);  // varibale que recogerá lo que le usuairo inerte
         
         System.out.println("Por favor, indique una cantidad de dinero --> ");
-        importe = entrada.nextInt();
+        importe = entrada.nextInt(); // se pasa lo que el usuario haya insertado a la variable importe
         
-        cartera = importe;
-        int billeteCincuenta = importe / 50;
-        importe = importe - (billeteCincuenta * 50);
+        cartera = importe; 
+        int billeteCincuenta = importe / 50; // variable que contendrá los billetes de 50
+        importe = importe - (billeteCincuenta * 50); // le quitamos al importe los billetes de 50
         int billeteVeinte = importe / 20;
         importe = importe - (billeteVeinte * 20);
         int billeteDiez= importe / 10;
