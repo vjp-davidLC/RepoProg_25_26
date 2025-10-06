@@ -22,7 +22,7 @@ public class Ejercicio26 {
         System.out.println("Por favor, introduzca un numero de 4 cifras --> "); 
         num = entrada.nextLine(); // variable que contiene el numero de 4 cifras
         System.out.println("El numero introducido es: "+num);
-        System.out.println("La primera cifra es: "+num.charAt(0));
+        System.out.println("La primera cifra es: "+num.charAt(0)); // lo que hace num.charAt(0) coge la primera posicion del contenido de la variable num.
         System.out.println("La primera cifra es: "+num.charAt(1));
         System.out.println("La primera cifra es: "+num.charAt(2));
         System.out.println("La primera cifra es: "+num.charAt(3));
