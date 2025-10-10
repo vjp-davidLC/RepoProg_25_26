@@ -17,14 +17,44 @@ public class Ejercicio8 {
      */
     public static void main(String[] args) {
         
-        float importe;
-        float aux;
+        int importe;
+        int aux;
         Scanner entrada = new Scanner (System.in);
         
         System.out.println("Por favor, indique una cantidad de dinero --> ");
-        importe = entrada.nextFloat();
+        importe = entrada.nextInt();
         
-        System.out.println(importe+"Euros se descomponen en :");
+        System.out.println(importe+" Euros se descomponen en :");
+        int billeteCincuenta = importe / 50; // variable que contendrá los billetes de 50
+        importe = importe - (billeteCincuenta * 50); // le quitamos al importe los billetes de 50
+        int billeteVeinte = importe / 20;
+        importe = importe - (billeteVeinte * 20);
+        int billeteDiez= importe / 10;
+        importe = importe - (billeteDiez * 10);
+        int billeteCinco= importe / 5;
+        importe = importe - (billeteCinco * 5);
+        int monedaDos = importe / 2;
+        importe = importe - (monedaDos * 2);
+        int monedaUno = importe;
+        
+        if (billeteCincuenta > 0){
+            System.out.println("Billetes de 50: "+billeteCincuenta);
+        }
+        if (billeteVeinte > 0){
+            System.out.println("Billetes de 20: "+billeteVeinte);
+        }
+        if (billeteDiez > 0){
+            System.out.println("Billetes de 10: "+billeteDiez);
+        }
+        if (billeteCinco > 0){
+            System.out.println("Billetes de 5: "+billeteCinco);
+        }
+        if (monedaDos > 0){
+            System.out.println("Monedas de 2: "+monedaDos);
+        }
+        if (monedaUno > 0){
+            System.out.println("Monedas de 1: "+monedaUno);
+        }
         
         
     }
