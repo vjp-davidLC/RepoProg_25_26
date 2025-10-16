@@ -51,7 +51,7 @@ public class Ejercicio27 {
                         System.out.println("La multiplicacion es: "+producto);
                     }
                 case 4 -> {
-                        try { // excepcio de error para cuando el usuario haya introducio un 0 en el divisor
+                        try { // excepcion de error para cuando el usuario haya introducio un 0 en el divisor
                             int division = num1 / num2;
                             System.out.println("La division es: "+division);
                         } 
