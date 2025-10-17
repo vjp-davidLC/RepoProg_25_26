@@ -28,8 +28,7 @@ public class Ejercicio18 {
             
             System.out.println("Inserte la contrasena: ");
             contrasenaIntroducida = entrada.nextInt();
-            intentos ++;
-            
+
             if (contrasenaIntroducida == contrasena){ 
                 System.out.println("Contrasena correcta.");
                 acierto = true;
@@ -38,8 +37,7 @@ public class Ejercicio18 {
             else {
                 System.out.println("Contrasena incorrecta.");   
                 intentos ++;
-                
-                
+ 
             }
 
         } while ( acierto==false && intentos < 3);
