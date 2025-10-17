@@ -41,9 +41,6 @@ public class Ejercicio18 {
                 
                 
             }
-            
-            
-            
 
         } while ( acierto==false && intentos < 3);
     
