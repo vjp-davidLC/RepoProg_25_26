@@ -17,7 +17,6 @@ public class Ejercicio24 {
      */
     public static void main(String[] args) {
     
-        int num1 = 1;
         int numeroIntroducido;
         boolean salida = false;
 
@@ -28,14 +27,15 @@ public class Ejercicio24 {
             System.out.println("Introduce un numero --> ");
             numeroIntroducido = entrada.nextInt();
             
-            for (int i = 1;i <= numeroIntroducido;i++) {
+            for (int num1 = 1;num1 <= numeroIntroducido ;num1++) {
                 
-                int multiplo = i % 3 ;
-                
-                if (multiplo == 0){
-                    System.out.println(multiplo);
+
+                if (num1 % 3 == 0){
+                    System.out.println(num1);
                     salida = true;
+                    num1 ++;
                 }
+               
    
             }
             
