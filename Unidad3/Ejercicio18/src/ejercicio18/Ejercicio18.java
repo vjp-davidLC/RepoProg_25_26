@@ -19,7 +19,7 @@ public class Ejercicio18 {
     
         int contrasena = 1234;
         int contrasenaIntroducida;
-        int intentos = 0;
+        int intentos = 1;
         boolean acierto = false;
         Scanner entrada = new Scanner (System.in);
 
