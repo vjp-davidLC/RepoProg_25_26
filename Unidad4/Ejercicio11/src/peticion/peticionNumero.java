@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 /**
  *
- * @author alumno
+ * @author David López
  */
-public class PeticionnNumero {
-        
-        public static int peticionNumero(){
+public class peticionNumero {
+    
+    public static int peticionNumero(){
     
         Scanner entrada = new Scanner (System.in);
         int numero;
@@ -20,7 +20,12 @@ public class PeticionnNumero {
         System.out.println("Inserte un numero --> ");
         numero = entrada.nextInt();
         
+        while (numero <0) {            
+            System.out.println("Has insertado un numero negativo. Vuelve a insertar otro numero --> ");
+            numero = entrada.nextInt();
+        }
+        
         return numero;
     }
-        
+    
 }

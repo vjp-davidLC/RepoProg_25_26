@@ -4,23 +4,23 @@
  */
 package tabla;
 
-import java.util.Scanner;
+import peticion.PeticionnNumero;
+
 /**
  *
  * @author David López
  */
 public class TablaDeMultiplicar {
     
-    public static int tablaDeMultiplicar(){
+    public static void tablaDeMultiplicar(){
         
-        int num1 = peticion.PeticionnNumero;
+        int num1 = PeticionnNumero.peticionNumero();
         
         for (int i = 0; i <= 10; i++) {
             int producto = num1 * i;
-            System.out.println(+num1+" x "+i);
+            System.out.println(num1+" x "+i+ " = "+producto);
         }
         
-        return 
         
     }
     
