@@ -14,7 +14,7 @@ public class Ejercicio29 {
 
     /**
      * @param args the command line argumentspublic static void main(String[] args) {
-
+     * /
         double aleatorio = ((Math.random()*100));
         int aleatorioEntero = (int) aleatorio;
         boolean salida = false;
