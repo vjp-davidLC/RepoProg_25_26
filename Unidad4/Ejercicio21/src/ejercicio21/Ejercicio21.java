@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package ejercicio21;
-
+import operacion.Operacion;
 /**
  *
  * @author David López
@@ -14,7 +14,9 @@ public class Ejercicio21 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        Operacion.sumaTotalNumerosPares();
+
     }
     
 }
