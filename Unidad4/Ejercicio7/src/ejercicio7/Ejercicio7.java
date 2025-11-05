@@ -20,56 +20,25 @@ public class Ejercicio7 {
         
         int temp;
         
-        if (num1 > num2){     // --> si el num1 uno es mayor que num2 entonces se intercambia las posiciones
-            temp = num1;
-            num1 = num2;
-            num2 = temp;
-        } 
-        if (num2 > num3){    // --> si el num2 uno es mayor que num3 entonces se intercambia las posiciones
-            temp = num2;
-            num2 = num3;
-            num3 = temp;
-        }
-        if (num3 > num4){   // --> si el num3 uno es mayor que num4 entonces se intercambia las posiciones
-            temp = num3;
-            num3 = num4;
-            num4 = temp;
-        }
-        
-        // Para asegurar el orden correcto
-        if (num1 > num2){
+        // Repetimos el proceso de comparación varias veces (3 pasadas)
+        // En cada pasada, el número más grande "sube" hasta el final.
+        for (int i = 0; i < 3; i++) {
+        if (num1 > num2) {
             temp = num1;
             num1 = num2;
             num2 = temp;
         }
-        if (num2 > num3){
+        if (num2 > num3) {
             temp = num2;
             num2 = num3;
             num3 = temp;
         }
-        if (num3 > num4){
+        if (num3 > num4) {
             temp = num3;
             num3 = num4;
             num4 = temp;
         }
-        
-        // Tercera pasada
-        
-        if (num1 > num2){
-            temp = num1;
-            num1 = num2;
-            num2 = temp;
-        }
-        if (num2 > num3){
-            temp = num2;
-            num2 = num3;
-            num3 = temp;
-        }
-        if (num3 > num4){
-            temp = num3;
-            num3 = num4;
-            num4 = temp;
-        }
+    }
         
         System.out.println("El orden de los numeros introducidos es el "+num1+" - "+num2+" - "+num3+" - "+num4);
         
