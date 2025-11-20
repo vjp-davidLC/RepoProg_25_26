@@ -11,6 +11,14 @@ package ejercicio10;
 public class Numero {
     
     private int valor;
+
+    public Numero() {
+        valor = 0;
+    }
+    
+    public Numero(int valor) {
+        this.valor = valor;
+    }
     
     public void establecerValor(int v) {
         valor = v;

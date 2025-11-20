@@ -14,7 +14,20 @@ public class Alumno { // clase que recogerá los datos del alumno
     private String nombre;
     private int nota;
     
-    // constuctor que recogerá el nombre del alumnno por parametro
+    // constuctores de la clase.
+    // constuctor por defecto
+    public Alumno() {
+        nombre = "";
+        nota = 0;
+    }
+
+    // constructor parametrizado
+    public Alumno(String nombre, int nota) {
+        this.nombre = nombre;
+        this.nota = nota;
+    }
+    
+    // constuctor que pide el ejercicio
     Alumno(String nom) {
         nombre = nom;
     }

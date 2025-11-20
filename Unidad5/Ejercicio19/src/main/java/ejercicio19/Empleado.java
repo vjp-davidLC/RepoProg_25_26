@@ -15,7 +15,15 @@ public class Empleado { // clase que recogerá los datos del empleado
     private int numeroHoras;
     private float tarifa;
     
-    // constructor de la clase
+    // constructores de la clase
+
+    public Empleado() {
+    
+        nombre = "";
+        numeroHoras = 0;
+        tarifa = 0;
+    }
+    
     Empleado(String nom, int num, float tarif) {
         nombre = nom;
         numeroHoras = num;

@@ -25,6 +25,16 @@ public class Direccion { // clase que recoge los datos al crear el objeto
         ciudad = ciu;
  
 }
+    
+    Direccion() {
+    
+        calle = "";
+        numero = 0;
+        piso = 0;
+        ciudad = "";
+ 
+}
+    
     // metodos set
     public void establecerCalle(String c) {
         calle = c;

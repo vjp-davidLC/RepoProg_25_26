@@ -21,6 +21,12 @@ public class Empleado { // clase que recogera los datos con su direccion
         salario = sal;
         direccion = direc;
     }
+
+    Empleado() {
+        nombre = "";
+        salario = 0;
+        direccion = new Direccion();
+    }
     
     // metodos set 
     public void establecerNombre(String n) {
