@@ -13,6 +13,20 @@ public class ProductoCongelado extends Producto{ // SUBCLASE de la superclase de
     // atributos de la clase
     private int temperaturaCongelacion;
     
+    // constuctor por defecto
+    public ProductoCongelado() {
+    
+        this.temperaturaCongelacion = 0;
+   
+    }
+    
+    //constuctor parametrizado
+
+    public ProductoCongelado(int temperaturaCongelacion) {
+        this.temperaturaCongelacion = temperaturaCongelacion;
+    }
+    
+    
     // constructor de la clase implementando los atributos de la SUPERCLASE Producto
     ProductoCongelado(int mesCaducidad, int anhoCaducidad, int numeroLote) {
         super(mesCaducidad, anhoCaducidad, numeroLote);

@@ -12,6 +12,19 @@ public class ProductoRefigerado extends Producto{ // SUBCLASE de la superclase d
     
     // atributos de la clase
     private int codigoOrganismo;
+
+    // constuctor por defecto
+    public ProductoRefigerado() {
+    
+        this.codigoOrganismo = 0;
+    
+    }
+
+    // constuctor parametrizado
+    public ProductoRefigerado(int codigoOrganismo) {
+        this.codigoOrganismo = codigoOrganismo;
+    }
+     
     
     // constructor de la clase implementando los atributos de la SUPERCLASE Producto
     ProductoRefigerado(int mesCaducidad, int anhoCaducidad, int numeroLote) {

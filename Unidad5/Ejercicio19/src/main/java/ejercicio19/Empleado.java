@@ -16,7 +16,8 @@ public class Empleado { // clase que recogerá los datos del empleado
     private float tarifa;
     
     // constructores de la clase
-
+    
+    // por defecto
     public Empleado() {
     
         nombre = "";
@@ -24,6 +25,7 @@ public class Empleado { // clase que recogerá los datos del empleado
         tarifa = 0;
     }
     
+    // parametrizado
     Empleado(String nom, int num, float tarif) {
         nombre = nom;
         numeroHoras = num;

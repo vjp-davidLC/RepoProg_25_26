@@ -15,14 +15,25 @@ public class Producto { // SUPERCLASE que recogerá los datos a traves de los at
     private int anhoCaducidad;
     private int numeroLote;
 
-    // consturctor publico para que las subclases lo incorporen
-    public Producto(int mesCaducidad, int anhoCaducidad, int numeroLote) {
+    // constuctores de las clase
+    // constuctor parametrizado
+    Producto(int mesCaducidad, int anhoCaducidad, int numeroLote) {
     
         this.mesCaducidad = mesCaducidad;
         this.anhoCaducidad = anhoCaducidad;
         this.numeroLote = numeroLote;
     
     }
+
+    Producto() {
+    
+        this.mesCaducidad = 0;
+        this.anhoCaducidad = 0;
+        this.numeroLote = 0;
+    
+    }
+    
+    
     
     // metodos get
     public void establecerMesCaducidad(int mesCaducidad) {

@@ -15,6 +15,22 @@ public class ProductoFresco extends Producto { // SUBCLASE de la superclase de P
     private int anhoEnvasado;
     private String paisOrigen;
 
+    public ProductoFresco() {
+        
+        this.mesEnvasado = 0;
+        this.anhoEnvasado = 0;
+        this.paisOrigen = "";
+        
+    }
+
+    public ProductoFresco(int mesEnvasado, int anhoEnvasado, String paisOrigen) {
+        this.mesEnvasado = mesEnvasado;
+        this.anhoEnvasado = anhoEnvasado;
+        this.paisOrigen = paisOrigen;
+    }
+    
+    
+    
     // constructor de la clase implementando los atributos de la SUPERCLASE Producto
     ProductoFresco(int mesCaducidad, int anhoCaducidad, int numeroLote) {
         super(mesCaducidad, anhoCaducidad, numeroLote);
