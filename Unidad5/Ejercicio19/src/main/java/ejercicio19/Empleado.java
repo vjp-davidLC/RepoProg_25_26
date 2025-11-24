@@ -44,5 +44,12 @@ public class Empleado { // clase que recogerá los datos del empleado
     public float obtenerTarifa() {
         return tarifa;
     }
+
+    
+    public String toString() {
+        return this.nombre+" trabajo "+this.numeroHoras+" horas, cobra";
+    }
+    
+    
     
 }
