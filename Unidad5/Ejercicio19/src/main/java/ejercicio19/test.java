@@ -67,22 +67,19 @@ public class test { // clase que se comprobará el uso de la creacion de los obj
         
         // creacion de objetos
         Empleado empleado1 = new Empleado(pedirNombre(),pedirNumeroHoras(), pedirTarifaEmpleado());
+        
+        System.out.println(empleado1.toString()+empleado1.obtenerTarifa()+" euros la hora por lo que le corresponde un sueldo de "+calcularTarifa(empleado1.obtenerTarifa(), empleado1.obtenerNumeroHoras())+
+                " euros.");
+        
         Empleado empleado2 = new Empleado(pedirNombre(),pedirNumeroHoras(), pedirTarifaEmpleado());
+        
+        System.out.println(empleado2.toString()+empleado2.obtenerTarifa()+" euros la hora por lo que le corresponde un sueldo de "+calcularTarifa(empleado2.obtenerTarifa(), empleado2.obtenerNumeroHoras())+
+                " euros.");
+        
         Empleado empleado3 = new Empleado(pedirNombre(),pedirNumeroHoras(), pedirTarifaEmpleado());
         
-        // le pasamos por parametros al metodo calcularTarifa el numero de horas y su tarifa a traves de metodos get 
-        System.out.println(empleado1.obtenerNombre()+" trabajo "+empleado1.obtenerNumeroHoras()+" horas, cobra"
-                + empleado1.obtenerTarifa()+" euros la hora por lo que le corresponde un sueldo de "+calcularTarifa(empleado1.obtenerTarifa(), empleado1.obtenerNumeroHoras())+
-                "euros.");
-        
-        System.out.println(empleado2.obtenerNombre()+" trabajo "+empleado2.obtenerNumeroHoras()+" horas, cobra"
-                + empleado2.obtenerTarifa()+" euros la hora por lo que le corresponde un sueldo de "+calcularTarifa(empleado2.obtenerTarifa(), empleado2.obtenerNumeroHoras())+
-                "euros.");
-        
-        System.out.println(empleado3.obtenerNombre()+" trabajo "+empleado3.obtenerNumeroHoras()+" horas, cobra"
-                + empleado3.obtenerTarifa()+" euros la hora por lo que le corresponde un sueldo de "+calcularTarifa(empleado3.obtenerTarifa(), empleado3.obtenerNumeroHoras())+
-                "euros.");
-        
+        System.out.println(empleado3.toString()+empleado2.obtenerTarifa()+" euros la hora por lo que le corresponde un sueldo de "+calcularTarifa(empleado2.obtenerTarifa(), empleado2.obtenerNumeroHoras())+
+                " euros.");
 
     }
 }
