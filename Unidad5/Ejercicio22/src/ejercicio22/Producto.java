@@ -53,7 +53,13 @@ public class Producto {
     public int devolverStock() {
         return stock;
     }
-
+    
+    public void restarStock(int unidadesUsuario) { // metodo que devuelve el numero de unidades que hay en el stock restandole lo que usuario pida
+        
+       this.stock = this.stock - unidadesUsuario;
+       
+    }
+    
     @Override
     public String toString() {
         return "";
