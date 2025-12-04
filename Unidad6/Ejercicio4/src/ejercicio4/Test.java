@@ -68,8 +68,7 @@ public class Test {
         Animal lobo2 = new Lobo("Bolt", 5, 12);
         Animal leon2 = new Leones("Alex", 19, 190);
         Animal gato2 = new Gato("Garfield", 10, 12);
-        
-        // PARTE 2
+
         System.out.println("----- PARTE 2 -----");
         // probamos en uno de los metodos de las clases para que los objetos creados anteriormente funcionen
         System.out.println("Perro: ");
