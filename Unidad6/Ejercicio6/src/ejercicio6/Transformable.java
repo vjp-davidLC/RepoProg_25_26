@@ -10,7 +10,7 @@ package ejercicio6;
  */
 public interface Transformable {
     
-    public void concatenarTodo();
+    public String concatenarTodo();
     public void obtenerIniciales();
     public void contarVocales();
     public void obtenerCadenaMasLarga();

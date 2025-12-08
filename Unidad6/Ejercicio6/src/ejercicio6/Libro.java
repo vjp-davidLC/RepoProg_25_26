@@ -66,10 +66,12 @@ public class Libro implements Transformable{
     
     // métodos de la interfaz transformable
     @Override
-    public void concatenarTodo() {
+    public String concatenarTodo() {
 
         String cadenaConcatenada = this.titulo +"#"+this.autor+"#"+this.genero;
         System.out.println(cadenaConcatenada);
+        
+        return cadenaConcatenada;
     }
 
     @Override
@@ -80,14 +82,33 @@ public class Libro implements Transformable{
         int longitudGenero = this.genero.length();
         
         if (longitudTitulo > longitudAutor && longitudTitulo > longitudGenero) {
-            System.out.println("");
+            System.out.println("La cadena mas larga es: " +this.titulo);
+        }
+        else if (longitudAutor > longitudTitulo && longitudAutor > longitudGenero) {
+            System.out.println("La cadena mas larga es: " +this.autor);
+        }
+        else if (longitudGenero > longitudTitulo && longitudGenero > longitudAutor){
+            System.out.println("La cadena mas larga es: " +this.genero);
         }
 
     }
 
     @Override
     public void contarVocales() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        int contador = 0;
+        String cadena = concatenarTodo();
+        
+        
+        for (int i = 0; i < cadena.length(); i++) {
+            
+            
+            if (cadena.charAt(i) == 'a' || cadena.charAt(i) == 'e' || cadena.charAt(i) == 'i' || cadena.charAt(i) == 'o' || cadena.charAt(i) == 'u'){
+                contador ++;
+            }
+            
+        }
+        System.out.println("Cantidad de vocales: " + contador);
+        
     }
 
     @Override
