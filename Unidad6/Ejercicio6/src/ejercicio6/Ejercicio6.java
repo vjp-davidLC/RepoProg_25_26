@@ -24,7 +24,7 @@ public class Ejercicio6 {
         libro1.contarVocales();
         libro1.obtenerIniciales();
         libro1.obtenerCadenaMasLarga();
-        libro1.buscarCadena(Potter);
+        libro1.buscarCadena("Potter");
         
         
         // PARTE 2
