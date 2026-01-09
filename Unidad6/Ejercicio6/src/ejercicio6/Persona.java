@@ -8,67 +8,67 @@ package ejercicio6;
  *
  * @author David
  */
-public class Libro implements Transformable{
+public class Persona implements Transformable{
     
     // Atributos
-    private String titulo;
-    private String autor;
-    private String genero;
+    private String nombre;
+    private String apellidos;
+    private String alias;
 
     // Consturctores
-    public Libro() {
-        this.titulo = "";
-        this.autor = "";
-        this.genero = "";
+    public Persona() {
+        this.nombre = "";
+        this.apellidos = "";
+        this.alias = "";
     }
 
-    public Libro(String titulo, String autor, String genero) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.genero = genero;
+    public Persona(String nombre, String apellidos, String alias) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.alias = alias;
     }
     
     // métodos setters
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setTitulo(String nombre) {
+        this.nombre = nombre;
     }
 
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
     
     //Métodos getters
 
-    public String getTitulo() {
-        return titulo;
+    public String getnombre() {
+        return nombre;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getAlias() {
+        return alias;
     }
 
     // método toStirng
     @Override
     public String toString() {
-        return "Título: "+this.titulo+"\n"
-                + "Autor. "+this.autor+"\n"
-                + "Genero: "+this.genero;
+        return "Nombre: "+this.nombre+"\n"
+                + "Apellidos: "+this.apellidos+"\n"
+                + "Alias: "+this.alias;
     }
     
     // métodos de la interfaz transformable
     @Override
     public String concatenarTodo() {
 
-        String cadenaConcatenada = this.titulo +"#"+this.autor+"#"+this.genero;
+        String cadenaConcatenada = this.alias +"#"+this.apellidos+"#"+this.nombre;
         System.out.println(cadenaConcatenada);
         
         return cadenaConcatenada;
@@ -77,18 +77,18 @@ public class Libro implements Transformable{
     @Override
     public void obtenerCadenaMasLarga() {
         
-        int longitudTitulo = this.titulo.length();
-        int longitudAutor = this.autor.length();
-        int longitudGenero = this.genero.length();
+        int longitudTitulo = this.alias.length();
+        int longitudAutor = this.apellidos.length();
+        int longitudGenero = this.nombre.length();
         
         if (longitudTitulo > longitudAutor && longitudTitulo > longitudGenero) {
-            System.out.println("La cadena mas larga es: " +this.titulo);
+            System.out.println("La cadena mas larga es: " +this.alias);
         }
         else if (longitudAutor > longitudTitulo && longitudAutor > longitudGenero) {
-            System.out.println("La cadena mas larga es: " +this.autor);
+            System.out.println("La cadena mas larga es: " +this.apellidos);
         }
         else if (longitudGenero > longitudTitulo && longitudGenero > longitudAutor){
-            System.out.println("La cadena mas larga es: " +this.genero);
+            System.out.println("La cadena mas larga es: " +this.nombre);
         }
 
     }
@@ -114,9 +114,9 @@ public class Libro implements Transformable{
     @Override
     public void obtenerIniciales() {
 
-        char primeraInicial = this.titulo.charAt(0);
-        char segundaInicial = this.autor.charAt(0);
-        char terceraInicial = this.genero.charAt(0);
+        char primeraInicial = this.alias.charAt(0);
+        char segundaInicial = this.apellidos.charAt(0);
+        char terceraInicial = this.nombre.charAt(0);
         
         System.out.println(""+primeraInicial+segundaInicial+terceraInicial);
         
@@ -127,15 +127,12 @@ public class Libro implements Transformable{
 
         boolean acierto = false;
         
-        if(cadena.equals(this.titulo) || cadena.equals(this.genero) || cadena.equals(this.autor)){
+        if(cadena.equals(this.alias) || cadena.equals(this.apellidos) || cadena.equals(this.nombre)){
             acierto = true;
         }
         
         return acierto;
         
     }
-    
-    
-    
     
 }
