@@ -16,11 +16,15 @@ public class Ejercicio15 {
      * @param args the command line arguments
      */
     
-    // menu principal
+    // método principal
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         
         int[] ventasCoches = new int[12]; // array con 12 indices de longitud
+        // array con los meses del año
+        String[] meses = new String[]{"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"};
+
+        
         int opcion ; // variable que recogerá la opcion dsel usuario
         boolean salir = false; // booleano que controlará la salida del programa
         
@@ -34,15 +38,15 @@ public class Ejercicio15 {
             switch (opcion) {
                 case 1:
                     System.out.println("Rellenando automaticamente las ventas.\n");
-                    rellenarArray(ventasCoches);
+                    rellenarArray(ventasCoches); // llamada al método
                     break;
                 case 2:
                     System.out.println("Mostrando las ventas.\n");
-                    mostrarArray(ventasCoches);
+                    mostrarArray(ventasCoches); // llamada al método
                     break;
                 case 3:
                     System.out.println("Mostrando las ventas al reves.\n");
-                    mostrarArrayReves(ventasCoches);
+                    mostrarArrayReves(ventasCoches); // llamada al método
                     break;
                 case 4:
                     System.out.println("La suma total de las ventas del anho son: "+valorTotalVentas(ventasCoches)+" euros\n");
@@ -51,7 +55,7 @@ public class Ejercicio15 {
                     System.out.println("La suma total de los meses pares son: "+valorTotalVentasPares(ventasCoches)+" euros\n");
                     break;
                 case 6:
-                    
+                    mostrarMesConMasVentas(ventasCoches, meses); // llamada al método
                     break;
                     
                 case 7:
@@ -83,58 +87,71 @@ public class Ejercicio15 {
     }
     
     public static void rellenarArray(int array[]) {
-    
+        // recorremos todos los indices del array y le asignamos en cada posicion un valor aleatorio
         for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random()*90)+10;
+            array[i] = (int) (Math.random()*90)+10; // valor aleatorio de 10-100
         } 
         
     }
     
     public static void mostrarArray(int array[]) {
-    
+        // recorremos todos los indices del array y mostramos su valor
         for (int i = 0; i < array.length; i++) {
             
             System.out.println("Posicion "+i+ " valor: "+array[i]+" euros");
         }
-        System.out.println("");
+        System.out.println(""); // salto de línea
     }
     
     public static void mostrarArrayReves(int array[]) {
-    
+        // recorremos todos los indices del array empezando desde el último [11] hasta el primero [0]
         for (int i = array.length - 1; i >= 0 ; i--) {
             
             System.out.println("Posicion "+i+ " valor: "+array[i]+" euros");
         }
-        System.out.println("");
+        System.out.println(""); // salto de línea
     }
     
     public static int valorTotalVentas(int array[]) {
     
-        int totalventas = 0;
+        int totalventas = 0; // inicializamos el valor de total de ventas en 0
         
+        // recorremos todos los indices del array mientras que se van sumando los valores en la variable anterior
         for (int i = 0; i < array.length; i++) {
-            
-            totalventas += array[i];
+            totalventas += array[i]; // incrementando el valor de la variable segun el recorrido
             
         }
-        
-        return totalventas;
+        return totalventas; // devuelve el total
         
     }
     
     public static int valorTotalVentasPares(int array[]) {
-    
-        String[] meses = new String[] {"Enero", "Febrero", "Marzo", "Abril","Mayo", "Junio", "Julio", "Agosto","Septiembre", "Octubre", "Noviembre", "Diciembre"};
         
-        int totalventas = 0;
+        int totalventas = 0; // inicializamos el valor de total de ventas en 0
         
+        // recorremos todos los indices del array pero saltando directamente a la seguunda posicion [1]
+        // y dando saltos de en dos en dos 
         for (int i = 1; i < array.length; i += 2) {
-            
-            totalventas += array[i];
+            totalventas += array[i]; // incrementando el valor de la variable segun el recorrido
 
         }
+        return totalventas; // devuelve el total
         
-        return totalventas;
+    }
+    
+    public static void mostrarMesConMasVentas(int ventas[], String meses[]) {
+    
+        int mesMayorVentas = 0; // en esta varibale guardariamos la posicion del mes (seria enero en este caso)
+        // este bucle recorre el array desde la posición 0 hasta la 11 (enero a diciembre)
+        for (int i = 0; i < ventas.length; i++) {
+            // si la ventas de dicho mes es mayor que el valor de la variable "mesMayorVentas" se le vuelve 
+            // a asignar el valor a la varibale
+            if (ventas[i] > ventas[mesMayorVentas]) {
+                mesMayorVentas = i; // guardamos dicha posicion (mes) en la variable
+                
+            }
+        }
+        System.out.println("Mes con mas ventas: " + meses[mesMayorVentas]+" ventas --> "+ ventas[mesMayorVentas]+" euros.\n");;
         
     }
     
