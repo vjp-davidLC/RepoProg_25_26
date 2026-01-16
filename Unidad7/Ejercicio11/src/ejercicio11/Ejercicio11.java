@@ -22,7 +22,7 @@ public class Ejercicio11 {
         int i = 0; // variable que controlará las posiciones del array
         int num; // variable que recogerá un numero aleatorio
         
-        // mientras qie i sea menor que [10] se ejecutará lo que haya dentro de él
+        // mientras que i sea menor que [10] se ejecutará lo que haya dentro de él
         while (i < array.length) {         
             
             num = (int) (Math.random() * 10); // genera un numero del 0-9
