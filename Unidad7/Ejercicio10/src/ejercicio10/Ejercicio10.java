@@ -52,32 +52,31 @@ public class Ejercicio10 {
     // método que determina si dos numeros son repetidos
     public static boolean esRepe(int num, int num2){
         boolean repetido; // variable boolean que determinará el resultado de este método
-        
-            if (num == num2) { // si los dos numeros son iguales entonces es verdadero que son repetidos
-                repetido = true;
-            }else{ // si no, no son repetidos
-                repetido = false;
-            }
+        repetido = num == num2; // si los dos numeros son iguales entonces es verdadero que son repetidos
+        // si no, no son repetidos
         
         return repetido; // devuelve el valor de la variable boolean repetido
     }
     
     // método que sutituye un valor repetido por el número 0
     public static void sustituirValRepe(int array[]) {
-        int i = 0; // variable que controlará las posición del bucle
         
-        /** bucle que recorre el array hasta su posicion final,
-         * (-1) porque en la condición del while comparamos una posición con la posición siquiente
-         * entonces cuando lleguemos al final no se compará con una posición que no exista.
-         */
-        for (int j = 0; j < array.length -1; j++) {
-            /** mientras la i sea menor que el valor de las posciones del array 
-             * Y el método esRepe(boolean) sea "false" seguirá en el bucle
-             */ 
-            while (i < array.length && esRepe(array[j],array[j+1])) {            
-                array[j] = 0; // le asignamos un numero 0 al valor de dada posicion en el array
-                i++; // incrementamos el valor del posición
+        int i = 0; // variable que controlará las posiciones del array
+        
+        // mientras que i sea menor que [10] se ejecutará lo que haya dentro del bucle
+        while (i < array.length) {         
+                 
+            // el bucle recorrerá desde la poscion [0] hasta la posicion según lo que tenga como valor i
+            for (int j = 0; j < i; j++) {
+
+            /** si el método esRepe no devuelve un True al comprar dos numeros (array[i] y array[j])
+             * asignará a la posicion i el valor 0
+            */ 
+                if (esRepe(array[i], array[j])) {
+                    array[i] = 0;
+                }
             }
+            i++; // irá incrementando la posición cada vez que se ejecute el for
         }
         
         // mostramos el resultado de sustitución
