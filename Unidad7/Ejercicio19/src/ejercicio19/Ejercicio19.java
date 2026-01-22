@@ -17,7 +17,7 @@ public class Ejercicio19 {
 
         int[] array = new int[100];
         
-        rellenarArray(array); // llamamos la método
+        rellenarArray(array); // llamamos a los métodos
         System.out.println("El valor mayor es --> "+valorMayor(array)+"\n");
         System.out.println("El valor menor es --> "+valorMenor(array)+"\n");
         System.out.println("El valor que mas se repite es --> "+valorMasrepe(array)+"\n");

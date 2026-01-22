@@ -20,7 +20,7 @@ public class Ejercicio18 {
         int[] arrayDos = new int[5];
         int[] arrayTres = new int[10];
         
-        
+        // lamada a los métodos
         System.out.println("Rellene los valores: ");
         rellenarArray(arrayUno);
         rellenarArray(arrayDos);
