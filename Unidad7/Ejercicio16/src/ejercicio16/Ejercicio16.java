@@ -41,24 +41,28 @@ public class Ejercicio16 {
             // switch que depende de la opcion que inserte el usuario llamará a un método o saldrá del programa
             switch (opcion) {
                 
-                //llama al método rellenarArray
                 case 1:
+                    //llama al método rellenarArray
                     rellenarArray(notas);
                     break;
-                // llama al método mostrarArray
+                
                 case 2:
+                    // llama al método mostrarArray
                     mostrarArray(notas, alumnos, asignaturas);
                     System.out.println(""); // salto del línea
                     break;
                 case 3:
+                    // muestra la media mas alta de entre los alumnos
                     System.out.println("\n El alumno con la media mas alta de la clase es --> "+mediaMasAlta(notas, alumnos, alumnoMedia(notas, alumnos)));
                     System.out.println("");
                     break;
                 case 4:
-                    
+                    // llama al método alumnMasSuspenso
+                    alumnMasSuspenso(notas, alumnos);
                     break;
                 case 5:
-                    
+                    // llama al método asiganturaMasDificil
+                    asignaturaMasdificil(notas, asignaturas);
                     break;
                 case 6:
                     System.out.println("Saliendo del programa....");
@@ -154,27 +158,61 @@ public class Ejercicio16 {
         return mediaMasAlta; // devuelve un número
     }
     
+    // método que muestra cuál es el alumno con más suspensos
     public static void alumnMasSuspenso(int[][] notas, String[] alumnos) {
     
-        int contador = 0;
-        int posicionAlumn;
-        int contadorMax = 0;
+        int contadorSuspensos; // contador de suspenos de cada alumno
+        int contadorMax = 0; // varibale que guardará el máximo de suspensos de entre los alumnos
+        String nombreAlumno = ""; // variable que guardará el nombre del alumno
         
-        
+        // recorremos el array por cada alumno
         for (int i = 0; i < notas.length; i++) {
-            posicionAlumn = 0;
+            contadorSuspensos = 0; // cada vez que pasemos de alumno (fila) el contador se reiniciará a 0
+            // por cad alumno recorremos las notas (columnas)
             for (int j = 0; j < notas[i].length; j++) {
+                // si la nota es menor que 5 
                 if (notas[i][j] < 5) {
-                    contador++;
+                    contadorSuspensos++; // se incrementa el contador de suspensos
                 }
             }
-            if (contador > contadorMax) {
-            contadorMax = contador;
+            // por cada alumno se compara el contador de suspensos
+            if (contadorSuspensos > contadorMax) {
+                contadorMax = contadorSuspensos; // se guarda el valor del contador de dicho alumno
+                nombreAlumno = alumnos[i]; // se guarda el nombre del alumno con el máximo de suspensos
             }
         }
         
-        
+        System.out.println("El alumno con mas suspensos es: "+nombreAlumno+"\n");
     
+    }
+    
+    // método que muestra cuál es la asignatura con una nota media mas baja de entre los alumnos
+    public static void asignaturaMasdificil(int[][] notas, String[] asignaturas) {
+    
+        float notaMedia; // variable que guardará la nota media de cada alumno
+        float suma; // suma entre las notas de cada alumno por asignatura
+        float notaMediaMax = 11; // inicalizamos en 10 porque sabemos que es la nota media más alta
+        String asignatura = ""; // guardará el nombre de al asignatura 
+        
+        // recorremos por CADA COLUMNA
+        for (int i = 0; i < notas[0].length; i++) { // notas[0].length numero de columnas
+            // cada vez que pasamos de asignatura se reiniciará estas variables
+            notaMedia = 0;
+            suma = 0;
+            // recorremos por cada columna su fila correspondiente
+            for (int j = 0; j < notas.length; j++) {
+                suma += (float) notas[j][i]; // acumulamos la suma de las notas de cada alumno en la asignatura
+                
+            } 
+            notaMedia = suma / notas.length; // por cada asignatura calculamos la media
+            
+            // guardamos la nota media mas baja que haya de entre CADA asignatura
+            if (notaMedia < notaMediaMax) {
+                notaMediaMax = notaMedia;
+                asignatura = asignaturas[i]; // guardamos el nombre de la asignatura
+            }
+        }
+        System.out.println("La asignatura mas dificil es "+asignatura+" con una nota media de "+notaMediaMax+"\n");
     }
     
 }
