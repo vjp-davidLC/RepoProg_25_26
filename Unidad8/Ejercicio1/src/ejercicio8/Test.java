@@ -32,6 +32,7 @@ public class Test {
         
     }
     
+    // pide la nota de cada asignatura
     public static void rellenarArray(Asignaturas[] boletin) {
         Scanner entrada = new Scanner(System.in);
         float nota = 0;
