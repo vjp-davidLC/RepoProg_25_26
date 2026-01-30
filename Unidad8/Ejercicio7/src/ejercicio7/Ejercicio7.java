@@ -96,7 +96,8 @@ public class Ejercicio7 {
     public static void mostrarArray(Dia[] mes, String[] diasSemana) {
     
         for (int i = 0; i < mes.length; i++) {
-            System.out.println(mes[i].getNombre()+" dia "+(i+1)+": "+mes[i].getTemperatura()+" grados.");
+            //System.out.println(mes[i].getNombre()+" dia "+(i+1)+": "+mes[i].getTemperatura()+" grados.");
+            System.out.println("Dia: "+(i+1)+"\n"+mes[i].toString());
         }
     
     }

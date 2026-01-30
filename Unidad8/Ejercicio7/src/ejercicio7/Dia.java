@@ -46,7 +46,7 @@ public class Dia {
     // método mostrar
     @Override
     public String toString() {
-        return "Dia: "+this.nombre+
+        return "Dia: "+this.nombre+"\n"+
                 "Temperatura: "+this.temperatura;
     }
     

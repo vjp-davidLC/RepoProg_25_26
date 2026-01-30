@@ -20,6 +20,7 @@ public class Ejercicio6 {
         int numEmpleados = pedirNumEmpleados();
         
         Empleado[] empleados = new Empleado[numEmpleados];
+        
         pedirAtributos(empleados);
         
         calcularSueldo(empleados);
@@ -63,7 +64,7 @@ public class Ejercicio6 {
                 
                 System.out.println("-- EMPLEADO "+(i+1)+" ALMACENADO CON EXITO --\n");
                 
-            } /** recogemos lo que introduzca el usuairo con el metodo entrada.nextLine() para que 
+            } /** recogemos lo que introduzca el usuario con el metodo entrada.nextLine() para que 
              * convirtamos manualmento a numero y no tengamos que limpiar el buffer
              */
         }
