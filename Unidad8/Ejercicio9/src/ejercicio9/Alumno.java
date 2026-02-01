@@ -16,7 +16,7 @@ public class Alumno {
     // constructores
     public Alumno() {
         this.nombreAlumbo = nombreAlumbo;
-        this.notas = new Asignatura[4];
+        this.notas = new Asignatura[4]; // por defecto tendrá 4 asignaturas
     }
 
     public Alumno(String nombreAlumbo, Asignatura[] notas) {
@@ -45,12 +45,50 @@ public class Alumno {
     }
 
     // método mostrar
-    @Override
-    public String toString() {
-        return "\nNombre del Alumno: "+this.nombreAlumbo
-                +"\n Notas: "+this.notas;
+    public void mostrar(){
+        
+        System.out.println("Nombre del Alumno: " + this.nombreAlumbo);
+        System.out.println("Notas:");
+        
+         for (int i = 0; i < notas.length; i++) {
+            if (notas[i] != null) { // por si aún no se ha creado la asignatura
+                System.out.println("  " + notas[i].getNombreAsignatura() + ": " + notas[i].getNota());
+            }
+        }
+        System.out.println(); 
     }
     
+    // método que muestra la media de cada alumno
+    public float notaMedia(){
+    
+        float notaMedia;
+        float suma = 0 ;
+        
+        for (int i = 0; i < this.notas.length; i++) {
+            
+            suma += notas[i].getNota();
+            
+        }
+        
+        notaMedia = suma / this.notas.length;
+        
+        return notaMedia;
+    }
+    
+    // método que cuenta los suspensos
+    public int totalSuspensos() {
+        int contadorSuspens = 0;
+    
+        for (int i = 0; i < this.notas.length; i++) {
+            
+            if (notas[i].getNota() < 5) {
+                contadorSuspens++;
+            }
+            
+        }
+        
+        return contadorSuspens;
+    }
     
     
 }
