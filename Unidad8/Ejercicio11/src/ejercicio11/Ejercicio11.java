@@ -111,8 +111,10 @@ public class Ejercicio11 {
     
         for (int i = 0; i < tienda.length; i++) {
             
-            tienda[i].Mostrar();
-            System.out.println("");
+            if(tienda[i] != null) {
+                tienda[i].Mostrar();
+                System.out.println("");
+            }
         }
     
     }
@@ -125,11 +127,13 @@ public class Ejercicio11 {
         System.out.println("");
         
         for (int i = 0; i < tienda.length; i++) {
-            
-            if (tienda[i].getPrecio() <= precioUsuario) {
-                tienda[i].Mostrar();
-                System.out.println("");
+            if (tienda[i] != null) {
+                if (tienda[i].getPrecio() <= precioUsuario) {
+                    tienda[i].Mostrar();
+                    System.out.println("");
+                }
             }
+            
             
         }
     
