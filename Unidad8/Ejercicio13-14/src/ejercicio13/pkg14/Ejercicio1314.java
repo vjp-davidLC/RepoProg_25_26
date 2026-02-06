@@ -19,7 +19,7 @@ public class Ejercicio1314 {
     public static void main(String[] args) {
         
         Scanner entrada = new Scanner(System.in);
-        Alumno[] alumnos = new Alumno[5];
+        Alumno[] alumnos = new Alumno[5]; // vector con una longitud de 5 posiciones
         
         boolean salir = false; // boolean que controlará el bucle do-while
         int opcionUsuario; // variable que recogerá la opcion del usuario
@@ -165,7 +165,7 @@ public class Ejercicio1314 {
     
     }
     
-    // métoddo que muestra los alumnos con una nota media mas alta que la que inserte el usuairo
+    // método que muestra los alumnos con una nota media mas alta que la que inserte el usuairo
     public static void mostrarAlumnNotaDada(Alumno[] alumnos) {
         Scanner entrada = new Scanner(System.in);
         float notaMediaUsuario;
@@ -177,7 +177,7 @@ public class Ejercicio1314 {
             
             if (alumnos[i] != null) {
                 
-                    // si la nota media del usuairo es menor que la nota media de dado alumno lo muestra
+                    // si la nota media del usuario es menor que la nota media de dado alumno lo muestra
                     if ( notaMediaUsuario <= alumnos[i].getNotaMedia() ) {
                         System.out.print("En la posicion "+i+"\n");
                         alumnos[i].mostrar();
@@ -216,18 +216,25 @@ public class Ejercicio1314 {
     
         String nombreUsuario = pedirNombre(); // recoge un nombre
         boolean nombreEncontrado = false; // determinará está o no está el alumno
-
+        int i = 0; // variable que recorrerá las posicones del array
+        
+        
+        // mientras la posicion sea menor que alumnos.length y false el boolean nombreEncontrado
+        while (i < alumnos.length && !nombreEncontrado) {
             
-        for (int i = 0; i < alumnos.length; i++) {
+            for (int j = 0; j < alumnos.length; j++) {
             
-            // si la posicion no esta vacía y el nombre que ha introducido el usuario es igual al nombre de dicho objeto 
-            if (alumnos[i] != null) {
-                if (nombreUsuario.equals(alumnos[i].getNombre())) {
-                    nombreEncontrado = true; // cambia el valor del boolean
+                // si la posicion no esta vacía y el nombre que ha introducido el usuario es igual al nombre de dicho objeto 
+                if (alumnos[j] != null) {
+                    if (nombreUsuario.equals(alumnos[j].getNombre())) {
+                        nombreEncontrado = true; // cambia el valor del boolean
+                    }
                 }
-
             }
+            i++; //incrementa i para que se cumpla una de las condiciones del while
         }
+        
+
         // si ha ecnontrado el nombre (true)
         if (nombreEncontrado) {
             System.out.println("\nEl alumno "+nombreUsuario+" ESTA matriculado.\n");

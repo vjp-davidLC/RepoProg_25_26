@@ -54,6 +54,7 @@ public class Ejercicio11 {
         
     }
     
+    // método que muestra lel menú
     public static void mostrarMenu() {
     
         System.out.println("-- TIENDA DE MUEBLES --");
@@ -65,6 +66,7 @@ public class Ejercicio11 {
         
     }
     
+    // método que pide la descripcion al usuario
     public static String pedirDescripcion() {
     
         Scanner entrada = new Scanner(System.in);
@@ -76,6 +78,7 @@ public class Ejercicio11 {
         return descripcion;
     }
     
+    // método que pide el precio al usuario
     public static int pedirPrecio() {
     
         Scanner entrada = new Scanner(System.in);
@@ -87,18 +90,19 @@ public class Ejercicio11 {
         return precio;
     }
     
+    // método que rellena el array
     public static void rellenarArray(Mueble[] tienda) {
         
-        
+        // recorre el array
         for (int i = 0; i < tienda.length; i++) {
             
-            tienda[i] = new Mueble();
+            tienda[i] = new Mueble(); // crea 1 objeto por cada posicion del array 
             
             System.out.println("\nInserte el nombre mueble: ");
-            tienda[i].setDescripcion(pedirDescripcion());
+            tienda[i].setDescripcion(pedirDescripcion()); // inserta un valor al atributo pidiendoselo al usuario
             
             System.out.println("Inserte el precio del mueble: ");
-            tienda[i].setPrecio(pedirPrecio());
+            tienda[i].setPrecio(pedirPrecio()); // inserta un valor al atributo pidiendoselo al usuario
             
         }
     
@@ -106,31 +110,38 @@ public class Ejercicio11 {
         
     }
     
-    
+    // mostramos los valores del array con sus atributos por cada objeto
     public static void mostrarArray(Mueble[] tienda) {
     
+        // recorremos el array
         for (int i = 0; i < tienda.length; i++) {
             
+            // si la posicion no está vacía
             if(tienda[i] != null) {
-                tienda[i].Mostrar();
-                System.out.println("");
+                tienda[i].Mostrar(); // muestra los datos del objeto
+                System.out.println(""); // salto de línea
             }
         }
     
     }
     
+    // método que muestra el inmueble que tenga el precio igual o menor que un precio dado por el usuario
     public static void mostrarArraySegunPrecio(Mueble[] tienda) {
         int precioUsuario; 
         
         System.out.println("\nInserte un precio: ");
-        precioUsuario = pedirPrecio();
+        precioUsuario = pedirPrecio(); // pedimos un precio al usuario
         System.out.println("");
         
+        // recorremos el array
         for (int i = 0; i < tienda.length; i++) {
+            // si la posicion del array no está vacía 
             if (tienda[i] != null) {
-                if (tienda[i].getPrecio() <= precioUsuario) {
-                    tienda[i].Mostrar();
-                    System.out.println("");
+                // si el precio del inmueble es igual o menor que el precio del usuario
+                if (tienda[i].getPrecio() <= precioUsuario)
+                {
+                    tienda[i].Mostrar(); // muestra los valores del objeto
+                    System.out.println(""); // salto de línea
                 }
             }
             

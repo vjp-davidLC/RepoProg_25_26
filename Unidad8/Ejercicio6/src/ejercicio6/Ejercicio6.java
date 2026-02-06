@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author David
+ * @author David López
  */
 public class Ejercicio6 {
 
@@ -17,50 +17,56 @@ public class Ejercicio6 {
      */
     public static void main(String[] args) {
         
-        int numEmpleados = pedirNumEmpleados();
+        // pide un numero al usuario
+        int numEmpleados = pedirNumEmpleados(); 
         
+        // crear un array de tipo Empleado[] con una longitud dada por el usuario
         Empleado[] empleados = new Empleado[numEmpleados];
         
-        pedirAtributos(empleados);
+        pedirAtributos(empleados); // rellena el array pidiendo al usuario los valores de los atributos 
         
-        calcularSueldo(empleados);
+        calcularSueldo(empleados); // calcula el suelda de cada empleado 
 
     }
     
+    // método que pide un numero al usuario
     public static int pedirNumEmpleados() {
         Scanner entrada = new Scanner(System.in);
         int numEmpleados;
         
         System.out.println("Cuantos empleado desea introducir?");
-        numEmpleados = entrada.nextInt();
+        numEmpleados = entrada.nextInt(); // recoge un numero del usuario
         
         
-        return numEmpleados;
+        return numEmpleados; // devuelve el valor int
     }
     
+    // rellena cada posicion del array pidiendo los valores de los atributos al usuario
     public static void pedirAtributos(Empleado[] empleados) {
         Scanner entrada = new Scanner(System.in);
         int numeroHoras;
         float tarifa;
         
+        // recorre el array
         for (int i = 0; i < empleados.length; i++) {
             
             empleados[i] = new Empleado(); // creacion de los objetos
             
+            // si dada la posicion del array esta vacía
             if (empleados[i] != null) {
                 System.out.println("-- EMPLEADO "+(i+1)+" --");
 
                 
                 System.out.println("Introduzca el nombre del empleado:");
-                empleados[i].setNombre(entrada.nextLine());
+                empleados[i].setNombre(entrada.nextLine()); // establece un valor String 
 
-                System.out.println("Cuanntas horas trabajo este mes?");
-                numeroHoras = Integer.parseInt(entrada.nextLine());
-                empleados[i].setNumeroHoras(numeroHoras);
+                System.out.println("Cuantas horas trabajo este mes?");
+                numeroHoras = Integer.parseInt(entrada.nextLine()); 
+                empleados[i].setNumeroHoras(numeroHoras); // establece un valor int
 
                 System.out.println("Cual es su tarifa por hora de trabajo? ");
-                tarifa = Integer.parseInt(entrada.nextLine());
-                empleados[i].setTarifa(tarifa);
+                tarifa = Integer.parseInt(entrada.nextLine()); 
+                empleados[i].setTarifa(tarifa); // establece un valor int
                 
                 System.out.println("-- EMPLEADO "+(i+1)+" ALMACENADO CON EXITO --\n");
                 

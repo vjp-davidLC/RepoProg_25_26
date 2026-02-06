@@ -6,7 +6,7 @@ package ejercicio6;
 
 /**
  *
- * @author David
+ * @author David López
  */
 public class Empleado {
     
@@ -58,7 +58,7 @@ public class Empleado {
         this.tarifa = tarifa;
     }
 
-    
+    // método toString
     
     public String toString() {
         return this.nombre+" trabajo "+this.numeroHoras+" horas, cobra";
