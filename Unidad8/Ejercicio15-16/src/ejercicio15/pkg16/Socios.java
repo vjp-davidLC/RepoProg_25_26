@@ -50,7 +50,7 @@ public class Socios {
     public void mostrar() {
     
         System.out.println("Nombre: "+this.nombre);
-        System.out.println("Precio abono: "+this.precioAbonado);
+        System.out.println("Precio abonado: "+this.precioAbonado+"\n");
         
     }
     

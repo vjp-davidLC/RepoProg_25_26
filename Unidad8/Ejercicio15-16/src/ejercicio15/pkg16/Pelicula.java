@@ -4,6 +4,7 @@
  */
 package ejercicio15.pkg16;
 
+import static ejercicio15.pkg16.Ejercicio1516.pedirCantidad;
 import java.net.SocketOptions;
 import java.util.Scanner;
 
@@ -88,22 +89,65 @@ public class Pelicula {
             
             this.socios[i] = new Socios();
             
-            socios[i].setNombre(pedirNombre()); // inserta un nombre dado por el usuariuo
+            socios[i].setNombre(pedirNombre()); // inserta un nombre dado por el usuario
             socios[i].setPrecioAbonado(precioAbonadoAleatorio()); // inserta un precio aleatorio
+            System.out.println("Precio del abonado insertado aleatoriamente: "+socios[i].getPrecioAbonado()+" euros. \n");
         }
     
     }
     
     // método mostrar
     public void mostrar() {
-    
+        System.out.println("\n-- PELICULA --");
         System.out.println("Titulo: "+this.titulo);
-        System.out.println("Coste de la licencia: "+this.costeLicencia);
+        System.out.println("Coste de la licencia: "+this.costeLicencia+"\n");
+        System.out.println("-- SOCIOS --");
         
         // tanbien mostraremos los valores del atributo socios[]
         for (int i = 0; i < this.socios.length; i++) {
-            socios[i].mostrar();
+            
+            if (socios[i] != null) {
+                socios[i].mostrar();
+            }
+            
         }
         
     }
+    
+    // método que calcula el beneficio total de una pelicula
+    public int beneificioPelicula() {
+    
+        int beneficio = 0;
+        int totalAbonado = 0;
+        
+        for (int i = 0; i < this.socios.length; i++) {
+            
+            totalAbonado += socios[i].getPrecioAbonado();
+            
+        }
+        
+        beneficio = totalAbonado - this.costeLicencia;
+        
+        return beneficio;
+    }
+    
+    // apartado 6
+    
+    
+    public int sociosConMayorImporte(int cantidadUsuario) {
+    
+        int contadorSocios = 0;
+        
+        for (int i = 0; i < socios.length; i++) {
+            
+            if (socios[i] != null && this.socios[0].getPrecioAbonado() > cantidadUsuario) {
+                contadorSocios ++;
+            }
+            
+        }
+    
+        return contadorSocios;
+        
+    }
+    
 }
